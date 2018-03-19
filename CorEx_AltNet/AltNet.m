@@ -1,4 +1,4 @@
-function Sol=AltNet(GEM,C,SolCorEx,Vmax,epsilon,Nmodels,time_limit,IterLimit)
+function Sol=AltNet(GEM,C,Z,SolCorEx,Vmax,epsilon,Nmodels,time_limit,IterLimit)
 
 %***************************The AltNet procedure***************************
 %**************************************************************************
@@ -41,7 +41,6 @@ function Sol=AltNet(GEM,C,SolCorEx,Vmax,epsilon,Nmodels,time_limit,IterLimit)
 %           Semidán (robaina@mpimp-golm.mpg.de), May, 2016
 %**************************************************************************
 
-Z = SolCorEx.AddedRxns;
 Xopt = SolCorEx.Xopt;
 A = SolCorEx.Abinary;
 RevRxns = find(GEM.rev==1);
