@@ -1,4 +1,5 @@
 
+
 %map expression data to AraCOREred
 MapGeneValues=zeros(length(AraCOREred.rxns),3);
 GeneValues=GeneValues/max(max(GeneValues));
@@ -28,8 +29,8 @@ LeafFastCORE=fastcore(CLeaf,AraCOREred,1e-5);
 PleafFast=length(setdiff(LeafFastCORE,CLeaf));
 
 %get alternative optimal networks
-LeafCorExAO=AltNet(AraCOREred,CLeaf,LeafCorEx.AddedRxns,LeafCorEx,1000,0.001,100,5*60)
-LeafFastCOREAO=AltNet(AraCOREred,CLeaf,PleafFast,LeafFastCORE,1000,0.001,100,5*60)
+LeafCorExAO=AltNet(AraCOREred,CLeaf,LeafCorEx.AddedRxns,LeafCorEx.Abinary,1000,0.001,100,5*60,100)
+LeafFastCOREAO=AltNet(AraCOREred,CLeaf,PleafFast,LeafFastCORE,1000,0.001,100,5*60,100)
 
 %get the fixed and variable fractions of the total number of non-core
 %reactions among alternative networks
@@ -116,8 +117,8 @@ LiverFastCORE=fastcore(CLiver,Recon1red,1e-5);
 PliverFast=length(setdiff(LiverFastCORE,CLiver));
 
 %get alternative optimal networks
-LiverCorExAO=AltNet(Recon1red,CLiver,LiverCorEx.AddedRxns,find(LiverCorEx.Abinary==1),1000,0.001,100,5*60)
-LiverFastCOREAO=AltNet(Recon1red,CLiver,PliverFast,LiverFastCORE,1000,0.001,100,5*60)
+LiverCorExAO=AltNet(Recon1red,CLiver,LiverCorEx.AddedRxns,LiverCorEx.Abinary,1000,0.001,100,5*60,100)
+LiverFastCOREAO=AltNet(Recon1red,CLiver,PliverFast,LiverFastCORE,1000,0.001,100,5*60,100)
 
 %get the fixed and variable fractions of the total number of non-core
 %reactions among alternative networks
