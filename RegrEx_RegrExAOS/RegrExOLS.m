@@ -33,7 +33,9 @@ function [Sol,ContextCOBRA]=RegrExOLS(GEM,D,Options)
 %     present in the final model (This has been not widely tested)
 %     
 %     Options.tasks: A vector indicating the indexes of the reactions that
-%     should be active in the final model (i.e. flux value above epsilon)
+%     should be active in the final model (i.e. flux value above epsilon).
+%     It is not guaranteed that a feasible solution will be found when 
+%     certain reactions are added as tasks.
 % 
 %     Options.blocked: A vector indicating the indexes of the reactions
 %     that should not be active in the final model (i.e. zero flux value)
@@ -80,7 +82,7 @@ function [Sol,ContextCOBRA]=RegrExOLS(GEM,D,Options)
 %
 %
 %**************************************************************************
-%         Semid·n (robaina@mpimp-golm.mpg.de), September, 2014
+%         Semid√°n (robaina@mpimp-golm.mpg.de), September, 2014
 %**************************************************************************
 
 
